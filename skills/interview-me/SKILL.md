@@ -42,6 +42,7 @@ The interview ends in a **brief**: the whole tree, one decision per line, so the
 
 - **Decisions.** One line per settled decision, with what was chosen. Every answered question appears; a reader counts the lines against the questions asked.
 - **Roads not taken.** One line per decision that had a real contender: the option you were closest to picking, and the answer that ruled it out.
+- **Findings.** One line per fact that settled a decision, so the tree can be audited without exploring again.
 - **Assumptions.** What you settled yourself rather than asking, so the user can challenge it.
 - **Out of scope.** What this explicitly does not cover.
 
