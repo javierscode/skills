@@ -10,6 +10,7 @@ npx skills@latest add javierscode/skills
 
 ## Skills
 
+- **[domain-modeling](./skills/domain-modeling/)** — sharpens your project's vocabulary while you talk, writing the glossary and the ADRs under it the moment they settle.
 - **[interview-me](./skills/interview-me/)** — interviews you one question at a time, working a design tree, until you agree on what you actually want. Run `/interview-me`.
 
 ## License
