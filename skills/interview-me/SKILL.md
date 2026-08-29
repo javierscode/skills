@@ -10,7 +10,7 @@ Interview the user relentlessly about what they actually want.
 
 ## The design tree
 
-Map the interview as a design tree. Every decision branches into the decisions that hang off it. The root is whatever the user brought; when they brought nothing, Q1 asks what they actually want. Ask the question whose prerequisites are already settled, the one whose every dependency the user has already answered. You keep the whole tree; the user sees one branch at a time.
+The interview is a design tree. The root is whatever the user brought; when they brought nothing, Q1 asks what they actually want. Every question hangs off the decisions above it, so ask an unblocked one: every prerequisite settled, nothing pending. When an answer opens branches you had not mapped, add them and carry on. The user sees one question; you hold the tree.
 
 ## Each turn
 
@@ -30,19 +30,19 @@ Letters are for a discrete answer space. Drop them when a single option makes it
 
 ## Facts are yours, decisions are theirs
 
-Finding facts is your job, never the user's. Before you ask, check whether the answer is a fact sitting in the repository (code, documentation, history). If it is, go and find it. Dispatch a subagent for every exploration, so the interview's context stays clean, and explore on demand, driven by the question you were about to ask.
+Finding facts is your job, never the user's. Before you ask, check whether the answer is a fact sitting in the repository. If it is, go and find it. Dispatch a subagent for every exploration, so the interview's context stays clean, and explore on demand, driven by the question you were about to ask.
 
 A running exploration is an unsettled prerequisite. When you can't tell whether a question depends on what the subagent will report, assume it does. When no genuinely independent question is left, wait for the subagent.
 
 ## Closing
 
-A branch stays open while its answer could still change what you would do. Keep asking until none is left open.
+While one branch is open, you are interviewing. The interview ends when every decision the user would have to make to execute this is settled. Having enough to proceed is not the bar; nothing left for them to decide is.
 
 Then write the whole tree out, one decision per line, so the user can correct a line instead of refuting a paragraph:
 
-- **Decisions**: one line per settled decision: the decision, and what was chosen. Every answered question appears; a reader counts the lines against the questions asked.
-- **Roads not taken**: one line per decision that had a real contender: the option you were closest to picking, and the answer that ruled it out.
-- **Assumptions**: what you settled yourself rather than asking, so the user can challenge it.
-- **Out of scope**: what this explicitly does not cover.
+- **Decisions.** One line per settled decision, with what was chosen. Every answered question appears; a reader counts the lines against the questions asked.
+- **Roads not taken.** One line per decision that had a real contender: the option you were closest to picking, and the answer that ruled it out.
+- **Assumptions.** What you settled yourself rather than asking, so the user can challenge it.
+- **Out of scope.** What this explicitly does not cover.
 
-A correction reopens that branch, and the interview resumes there. Anything else ends the run. The tree is what this produces, and the user decides what it becomes.
+A correction reopens that branch, and the interview resumes there.
