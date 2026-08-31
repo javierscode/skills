@@ -14,6 +14,7 @@ npx skills@latest add javierscode/skills
 
 Typed as `/name`. Nothing else can reach them, so this list is what you have to remember.
 
+- **[commit-this](./skills/commit-this/)** — cuts your working tree into one commit per intent, shows you the proposal, and commits once you approve.
 - **[interview-me](./skills/interview-me/)** — interviews you one question at a time, working a design tree, until you agree on what you actually want.
 - **[interview-me-with-docs](./skills/interview-me-with-docs/)** — the same interview, with the glossary and the ADRs written as the decisions settle.
 
