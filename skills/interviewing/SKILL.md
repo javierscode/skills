@@ -1,6 +1,6 @@
 ---
 name: interviewing
-description: Interviews the user one question at a time, working a design tree until every decision is settled. Use when they say they have not decided how to approach something, or want to think it through with you. A request they have already decided is not this skill: build it.
+description: Interview the user relentlessly until every decision is settled. Use when they say they have not decided how to approach something, or ask you to think it through with them.
 ---
 
 # Interviewing
