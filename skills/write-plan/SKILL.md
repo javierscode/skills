@@ -1,11 +1,11 @@
 ---
-name: to-plan
+name: write-plan
 description: Turns what you decided in the session into a plan of vertical slices, one file per task, written once you approve the breakdown.
 argument-hint: "Nothing, or the path to a file that states the scope."
 disable-model-invocation: true
 ---
 
-# To plan
+# Write plan
 
 Break the scope into **vertical slices** and write one file per slice. You write the plan files and nothing else.
 

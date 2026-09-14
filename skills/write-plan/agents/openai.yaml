@@ -1,5 +1,5 @@
 interface:
-  display_name: "To Plan"
+  display_name: "Write Plan"
   short_description: "Turn the session into a plan of vertical slices"
 
 invocation:

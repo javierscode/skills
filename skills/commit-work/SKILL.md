@@ -1,10 +1,10 @@
 ---
-name: commit-this
+name: commit-work
 description: Cuts your working tree into one commit per intent in Conventional Commits, shows you the proposal, and commits once you approve.
 disable-model-invocation: true
 ---
 
-# Commit this
+# Commit work
 
 Split everything uncommitted into commits, one per intent. That means everything `git status` reports, untracked files included. Decide the cuts first. Write the messages after.
 
