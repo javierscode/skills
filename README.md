@@ -23,6 +23,7 @@ Typed as `/name`. Nothing else can reach them, so this list is what you have to 
 
 Reached on its own when the task fits, or by the skills above. You can type them too.
 
+- **[conventional-commits](./skills/conventional-commits/)** — where a commit is cut and how its message reads, so any skill that ends in commits writes them the same way.
 - **[domain-modeling](./skills/domain-modeling/)** — sharpens your project's vocabulary while you talk, writing the glossary and the ADRs under it the moment they settle.
 - **[interviewing](./skills/interviewing/)** — the design-tree interview itself, behind both `/interview-me` commands.
 
