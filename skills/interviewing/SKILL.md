@@ -39,10 +39,10 @@ A running exploration is an unsettled prerequisite. When you can't tell whether 
 
 While one branch is open, you are interviewing. The interview ends when every decision the user would have to make to execute this is settled. Having enough to proceed is not the bar; nothing left for them to decide is.
 
-The interview ends in a **brief**: the whole tree, one decision per line, so the user can correct a line instead of refuting a paragraph:
+The interview ends in a **brief**: the whole tree, one decision per line, so the user can correct a line instead of refuting a paragraph. Every line opens with a **label** naming what it settles, and no two decisions share one; two that do are two labels you have not found yet:
 
-- **Decisions.** One line per settled decision, with what was chosen. Every answered question appears; a reader counts the lines against the questions asked.
-- **Roads not taken.** One line per decision that had a real contender: the option you were closest to picking, and the answer that ruled it out.
+- **Decisions.** One line per settled decision, with what was chosen. Every answered question appears.
+- **Roads not taken.** One line per decision that had a real contender, under that decision's label: the option you were closest to picking, and the answer that ruled it out.
 - **Findings.** One line per fact that settled a decision, so the tree can be audited without exploring again.
 - **Assumptions.** What you settled yourself rather than asking, so the user can challenge it.
 - **Out of scope.** What this explicitly does not cover.
