@@ -15,9 +15,11 @@ The interview is a design tree. The root is whatever the user brought; when they
 
 One question per turn, numbered from Q1 upward across the interview. The markers below are fixed; everything between them bends to the question, in shape and in length:
 
-> What the previous question settled, and the branch that opens from it; plus whatever else the user needs to answer.
+> What the previous question settled, and the branch that opens from it.
 >
 > ❓ **Q7** The question.
+>
+> The findings that settle it, conclusion first.
 >
 > **a) short description.** What's this option about.
 >
