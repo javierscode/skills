@@ -8,6 +8,14 @@ My skills for coding agents (Claude Code, Codex, Cursor).
 npx skills@latest add javierscode/skills
 ```
 
+## Main workflow
+
+From an idea to a pull request, one skill per step:
+
+1. **`/define-scope`** — settle every decision with you, writing the glossary and the ADRs along the way.
+2. **`/write-plan`** — cut that scope into vertical slices, one file per task.
+3. **`/implement-plan`** — run the slices as reviewed subagents into a single pull request.
+
 ## Skills
 
 ### You invoke these
