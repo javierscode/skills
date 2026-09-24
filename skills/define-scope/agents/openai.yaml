@@ -1,5 +1,5 @@
 interface:
-  display_name: "Interview Me with Docs"
+  display_name: "Define Scope"
   short_description: "Interview that documents itself as it goes"
 
 invocation:

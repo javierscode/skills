@@ -1,5 +1,5 @@
 ---
-name: interview-me-with-docs
+name: define-scope
 description: Interviews you one question at a time, and writes the glossary and ADRs as the decisions settle.
 disable-model-invocation: true
 ---
