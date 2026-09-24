@@ -35,6 +35,45 @@ Reached on its own when the task fits, or by the skills above. You can type them
 - **[domain-modeling](./skills/domain-modeling/)** — sharpens your project's vocabulary while you talk, writing the glossary and the ADRs under it the moment they settle.
 - **[interviewing](./skills/interviewing/)** — the design-tree interview itself, behind `/define-scope`. Type `/interviewing` for the interview without the docs.
 
+### How they compose
+
+```mermaid
+---
+config:
+  flowchart:
+    rankSpacing: 70
+    subGraphTitleMargin:
+      top: 10
+      bottom: 20
+---
+flowchart TB
+  subgraph you["You invoke these"]
+    direction LR
+    define-scope(["/define-scope"])
+    write-plan(["/write-plan"])
+    implement-plan(["/implement-plan"])
+    commit-work(["/commit-work"])
+  end
+  subgraph agent["The agent invokes these"]
+    direction LR
+    interviewing(["interviewing"])
+    domain-modeling(["domain-modeling"])
+    conventional-commits(["conventional-commits"])
+  end
+
+  define-scope --> interviewing
+  define-scope --> domain-modeling
+  implement-plan --> conventional-commits
+  commit-work --> conventional-commits
+
+  classDef user fill:#2563eb,stroke:#1d4ed8,color:#fff
+  classDef model fill:#7c3aed,stroke:#6d28d9,color:#fff
+  class define-scope,write-plan,implement-plan,commit-work user
+  class interviewing,domain-modeling,conventional-commits model
+  style you fill:transparent,stroke:#2563eb,stroke-dasharray:4 4
+  style agent fill:transparent,stroke:#7c3aed,stroke-dasharray:4 4
+```
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
