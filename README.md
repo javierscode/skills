@@ -22,7 +22,7 @@ From an idea to a pull request, one skill per step:
 
 Typed as `/name`. Nothing else can reach them, so this list is what you have to remember.
 
-- **[address-review](./skills/address-review/)** — works through the review comments on your pull request one at a time, landing each change and reply once you approve it.
+- **[address-review](./skills/address-review/)** — works through your pull request's review comments one at a time, with approval before commits, pushes and replies.
 - **[commit-work](./skills/commit-work/)** — cuts your working tree into one commit per intent, shows you the proposal, and commits once you approve.
 - **[define-scope](./skills/define-scope/)** — interviews you one question at a time until every decision is settled, writing the glossary and the ADRs as it goes.
 - **[implement-plan](./skills/implement-plan/)** — runs a plan's slices as parallel subagents, each one reviewed before it merges, into a single pull request.

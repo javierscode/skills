@@ -1,13 +1,13 @@
 ---
 name: address-review
-description: Works through the review comments on your pull request one at a time, landing each change and reply once you approve it.
+description: Works through your pull request's review comments one at a time, with approval before commits, pushes and replies.
 argument-hint: "Nothing, or the number or URL of the pull request."
 disable-model-invocation: true
 ---
 
 # Address review
 
-Work through what reviewers left on your PR, one comment at a time, until none is **pending**. Each comment gets a reply, and a change when it calls for one. Nothing lands without the user's approval.
+Work through what reviewers left on your PR, one comment at a time, until none is **pending**. Each comment gets a reply, and a change when it calls for one. Get the user's approval before committing a change and before pushing it or posting a reply.
 
 **You** are the account `gh` is authenticated as. Your PR is the argument, or the PR of the current branch when there is none.
 
@@ -19,7 +19,7 @@ Then find the **related PRs**: PRs in other repositories whose URL appears in yo
 
 ## 2. Align
 
-Align your PR's repository: switch to the PR's head branch and fast-forward it to the remote.
+Align your PR's repository. Switch to the PR's head branch and fast-forward it to the remote.
 
 When a repository has uncommitted changes, or its branch has commits the remote lacks, stop. Say which repository and what you found, touch nothing, and wait for the user to settle it.
 
@@ -27,7 +27,7 @@ You end when your PR's repository is checked out on the PR's head branch and mat
 
 ## 3. Build the queue
 
-A comment by anyone but you is **pending** when your last word is missing from it:
+Only comments by accounts other than yours can be pending.
 
 - An **inline thread** is pending when it is unresolved and its last comment is not yours. Only the GraphQL API reports whether a thread is resolved. Page through the PR's `reviewThreads` for each thread's `id`, `isResolved`, `path`, `line` and comment authors.
 - A **review body** with text, or a **conversation comment**, is pending when no later comment of yours links to its URL.
@@ -40,15 +40,17 @@ Take the queue in order. For each comment, decide whether it calls for a change 
 
 Before the first change in a related PR's repository, align its local clone following step 2, using that PR's head branch. Until then, read that PR through GitHub and leave its local clone untouched.
 
-**A change.** Make it in the repository the comment points at. Run the checks the project already has for the area you touched, meaning its tests, lint or typecheck, and fix what fails. Then show the comment, the diff, and the checks you ran, and wait. Read the reply as approval, correction, or refusal:
+**A change.** Make it in the repository the comment points at. Run the project's existing checks for the area you changed. Fix failures caused by your change. If an unrelated failure blocks validation, report it and ask the user how to proceed.
 
-- On approval, commit the change. Call the Skill tool with "conventional-commits". It settles how that message reads.
+Then show the comment, the diff and the checks you ran, and wait. Treat the user's response as approval, correction or refusal:
+
+- On approval, use the conventional-commits skill before committing the approved change.
 - On a correction, apply it, run the checks again, and show it again.
 - On refusal, revert the change and answer the comment with a reply only.
 
 When an earlier commit already answers a comment, its reply cites that commit and nothing changes.
 
-**The reply.** Write it in the language of the comment it answers, short and direct. A reply to a review body or a conversation comment opens with its URL, the link that marks it answered. When there was a change, cite its commit: the short SHA in your PR's repository, `owner/repo@sha` in a related PR's. Show it and wait for approval or a correction.
+**The reply.** Write the reply in the comment's language. Keep it short and direct. Start replies to review bodies and conversation comments with the original comment's URL. If you made a change, cite its commit. Use the short SHA for your PR's repository and `owner/repo@sha` for a related repository. Show the draft and wait for approval or a correction.
 
 On approval, push every repository holding a new commit, then post the reply. Reply to an inline thread with the `addPullRequestReviewThreadReply` mutation on the thread's `id`. Reply to a review body or conversation comment with a new conversation comment. Leave every thread unresolved; resolving it is the reviewer's call.
 
