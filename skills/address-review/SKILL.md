@@ -19,11 +19,11 @@ Then find the **related PRs**: PRs in other repositories whose URL appears in yo
 
 ## 2. Align
 
-Align your PR's repository and each related PR's local clone: switch to the PR's head branch and fast-forward it to the remote.
+Align your PR's repository: switch to the PR's head branch and fast-forward it to the remote.
 
 When a repository has uncommitted changes, or its branch has commits the remote lacks, stop. Say which repository and what you found, touch nothing, and wait for the user to settle it.
 
-You end when every repository is checked out on its PR's head branch and matches the remote.
+You end when your PR's repository is checked out on the PR's head branch and matches the remote.
 
 ## 3. Build the queue
 
@@ -37,6 +37,8 @@ Queue every pending comment: review bodies first, then inline threads by file an
 ## 4. Address each comment
 
 Take the queue in order. For each comment, decide whether it calls for a change or only a reply. When the right approach is genuinely unclear, ask the user before writing anything.
+
+Before the first change in a related PR's repository, align its local clone following step 2, using that PR's head branch. Until then, read that PR through GitHub and leave its local clone untouched.
 
 **A change.** Make it in the repository the comment points at. Run the checks the project already has for the area you touched, meaning its tests, lint or typecheck, and fix what fails. Then show the comment, the diff, and the checks you ran, and wait. Read the reply as approval, correction, or refusal:
 
