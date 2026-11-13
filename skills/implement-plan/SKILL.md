@@ -21,7 +21,9 @@ When that branch already exists, this is a resume. Switch to it. Every task whos
 
 ## 2. Work the frontier
 
-The **frontier** is every unfinished task whose `Blocked by` tasks have all merged. Dispatch the whole frontier at once, in a single message, and re-form it each time a task merges.
+The **frontier** is every unfinished task whose `Blocked by` tasks have all merged. Start every task on it at once, each subagent in the background, and re-form it each time a task merges, starting whatever joins it.
+
+The frontier runs as a **pipeline**: the moment a subagent returns, take that task's next step, so its review, its merge and every task its merge unblocks wait on that task alone.
 
 Each task runs its own loop, up to **three rounds**:
 
